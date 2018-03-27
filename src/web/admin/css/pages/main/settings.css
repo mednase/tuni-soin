@@ -1,0 +1,7 @@
+.basic-btn.btn-round,.btn-delete-newsletter {
+    padding: 5px!important;
+    border-radius: 50%!important;
+    font-size: 10px;
+    margin-top: 7px;
+    height: 23px;
+}

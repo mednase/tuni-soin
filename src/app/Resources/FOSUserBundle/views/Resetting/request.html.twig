@@ -1,0 +1,8 @@
+{% extends "@FOSUser/layout.html.twig" %}
+{% block bodyClass %}page-forgot-password{% endblock %}
+{% block fos_user_content %}
+{% include "FOSUserBundle:Resetting:request_content.html.twig" %}
+{% endblock fos_user_content %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('admin/assets/theme/classic/base/assets/examples/css/pages/forgot-password.css') }}">
+{% endblock %}

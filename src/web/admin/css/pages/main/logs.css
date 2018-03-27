@@ -1,0 +1,101 @@
+.bloc {
+    margin-bottom: 10px;
+    width: 100%;
+    background: #eae3e345;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 4px 0 black;
+}
+
+.bloc .client {
+    font-size: 20px;
+    margin: 0;
+    color: #42d38d;
+}
+
+.bloc .title {
+    font-size: 16px;
+    margin-top: 5px !important;
+}
+
+.bloc .status-container {
+    position: relative;
+}
+
+.bloc .status {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: grey;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.bloc .status-container .status.success {
+    background: #00c100;
+}
+
+.bloc .status-container .status.fail {
+    background: red;
+}
+
+.error_info {
+    margin-top: 9px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(228, 230, 232, 0.6);
+}
+
+.error_container {
+    position: relative;
+}
+
+.btn-collapse:active, .btn-collapse:focus {
+    outline: 0 !important;
+    border: 0 !important;
+}
+
+.btn-collapse {
+    outline: 0 !important;
+    border: 0 !important;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 50%;
+    padding: 0;
+    background: transparent;
+    font-size: 30px;
+    color: #80808057;
+}
+
+.error_info p {
+    font-size: 14px;
+    color: #e9595b;
+}
+
+.btn-collapse:hover, .btn-collapse:not(.collapsed) {
+    color: #808080;
+}
+
+.btn-collapse > i {
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
+}
+
+.btn-collapse:not(.collapsed) > i {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+}
+.input-daterange{
+    height: 36px;
+}

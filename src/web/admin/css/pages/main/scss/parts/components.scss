@@ -1,0 +1,321 @@
+
+/*
+.site-menubar-unfold {
+  .page, .site-footer {
+    margin-left: 245px;
+  }
+  .site-menubar, .site-menubar-footer {
+    width: 245px;
+  }
+}
+*/
+
+.page {
+  .page-header {
+    padding: 30px 30px 0;
+  }
+  .page-content {
+    h4 {
+      margin-top: 25px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+
+/**** form buttons ***/
+.form-group {
+  &.form-material {
+    .form-btn {
+      float: right;
+      .btn-cancel {
+        font-size: 13px;
+        background: transparent;
+        color: #000;
+        border-radius: 4px;
+        border-color: #000;
+        margin-right: 15px;
+        padding: 8px 32px;
+      }
+    }
+  }
+}
+
+/*** primary button ***/
+.basic-btn {
+  padding: 8px 25px;
+  background-color: $baseColor;
+  border-color: $baseColor;
+  color: #fff;
+  border-radius: 4px;
+  &:hover {
+    color: #fff;
+    background-color: $baseColor;
+    border-color: $baseColor;
+  }
+}
+
+/**** form error message *****/
+.error-message {
+  position: absolute;
+  font-family: "OpenSans-Regular", sans-serif;
+  font-size: 12px;
+  color: #f96868;
+  margin: 2px 0 0px;
+  ul {
+    padding: 0;
+    list-style: none;
+  }
+}
+
+/**** loader ****/
+.loader-index {
+  & > div {
+    background: $baseColor;
+  }
+}
+
+.loader-overlay {
+  background: #f8f8f8;
+}
+
+/*** form input ***/
+.form-material {
+  .form-control {
+    background-image: -webkit-gradient(linear, left top, left bottom, from($baseColor), to($baseColor)), -webkit-gradient(linear, left top, left bottom, from(#e4eaec), to(#e4eaec));
+    background-image: -webkit-linear-gradient($baseColor, $baseColor), -webkit-linear-gradient(#e4eaec, #e4eaec);
+    background-image: -o-linear-gradient($baseColor,$baseColor), -o-linear-gradient(#e4eaec, #e4eaec);
+    background-image: linear-gradient($baseColor, $baseColor), linear-gradient(#e4eaec, #e4eaec);
+    &.focus, &:focus {
+      background-image: -webkit-gradient(linear, left top, left bottom, from($baseColor), to($baseColor)), -webkit-gradient(linear, left top, left bottom, from(#e4eaec), to(#e4eaec));
+      background-image: -webkit-linear-gradient($baseColor, $baseColor), -webkit-linear-gradient(#e4eaec, #e4eaec);
+      background-image: -o-linear-gradient($baseColor, $baseColor), -o-linear-gradient(#e4eaec, #e4eaec);
+      background-image: linear-gradient($baseColor, $baseColor), linear-gradient(#e4eaec, #e4eaec);
+      & ~ .floating-label {
+        color: $baseColor;
+      }
+    }
+  }
+}
+
+/***** link ***/
+a {
+  color: $baseColor;
+  &:hover {
+    color: #45e59c;
+  }
+}
+
+/*** chekbox button ****/
+.checkbox-primary input[type=radio]:checked + input[type=hidden] + label::before,
+.checkbox-primary input[type=radio]:checked + label::before,
+.checkbox-primary input[type=checkbox]:checked + input[type=hidden] + label::before,
+.checkbox-primary input[type=checkbox]:checked + label::before {
+  background-color: $baseColor;
+  border-color: $baseColor;
+}
+
+/****** alertify modal ****/
+#full-delete-block {
+  display: none;
+}
+.alertify {
+  .dialog {
+    #full-delete-block {
+      display: block;
+    }
+    .btn {
+      &.ok {
+        padding: 8px 25px;
+        background-color: $baseColor;
+        border-color: $baseColor;
+        color: #fff;
+        border-radius: 4px;
+        &:hover {
+          color: #fff;
+          background-color: #45e59c;
+          border-color: #45e59c;
+        }
+      }
+      &.cancel {
+        padding: 8px 20px;
+        background-color: #fff;
+        &:hover {
+          background-color: #F2F4F5;
+        }
+      }
+
+    }
+  }
+}
+
+.alertify-logs {
+  &.top {
+    top: 65px;
+  }
+  &.right {
+    right: 30px;
+  }
+}
+
+/**** form ***/
+
+form {
+  h3 {
+    font-size: 20px;
+  }
+  .field {
+    margin-bottom: 30px;
+    h4 {
+      font-size: 14px;
+      margin: 0 !important;
+      text-transform: none !important;
+    }
+    .first-col {
+      padding-right: 25px;
+      div {
+        @include alignItems(center);
+      }
+    }
+    .last-col {
+      padding-left: 25px;
+      div {
+        @include alignItems(center);
+      }
+    }
+  }
+}
+
+.form-control {
+  &.focus, &:focus {
+    border-color: $baseColor;
+  }
+}
+
+/*** spinner ***/
+.spin {
+  animation: spin 2s infinite linear;
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+/***** modal table ****/
+
+.modal {
+  &.affect-modal {
+    .modal-header {
+      background: $baseColor;
+      border-bottom: 1px solid #eff3f5 !important;
+    }
+    .modal-body {
+      padding-top: 10px;
+      position: static;
+    }
+
+    .modal-body-header {
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(128, 128, 128, 0.09);
+      h4 {
+        color: $baseColor;
+        margin-bottom: 0;
+      }
+    }
+
+    .modal-loading {
+      background-color: rgba(220, 220, 220, 0.40);
+      opacity: 0.8;
+      cursor: auto;
+      width: 100%;
+      height: 100%;
+      z-index: 15;
+      position: absolute;
+      left: 0;
+      top: 0;
+      text-align: center;
+      vertical-align: middle;
+      color: $baseColor;
+      & > i {
+        font-size: 40px;
+        position: absolute;
+        top: 45%;
+        transform: translateY(-50%);
+      }
+    }
+    .close {
+      float: right;
+      color: white;
+      position: absolute;
+      top: 2px;
+      right: 12px;
+      outline: none;
+    }
+    .hidden {
+      display: none;
+    }
+  }
+}
+
+/****** Charts *******/
+.card {
+  &.card-shadow {
+    display: block;
+    .filter {
+      padding: 30px 30px 0;
+    }
+    .card-block {
+      .btn-floating {
+        @include crossBrowser(box-shadow,none);
+        cursor: default;
+        &.btn-warning {
+            background-color: #f2a654 !important;
+            border-color: #f2a654 !important;
+        }
+        &.btn-green {
+          background-color: #83B483 !important;
+          border-color: #83B483 !important;
+        }
+        &.btn-danger {
+          border-color: #f96868 !important;
+          background-color: #f96868 !important;
+        }
+        &.btn-primary {
+          border-color: #62a8ea !important;
+          background-color: #62a8ea !important;
+        }
+      }
+    }
+    .widget-content {
+      padding: 0 !important;
+      overflow: auto;
+      .panel {
+        .panel-body {
+          padding: 20px 30px;
+        }
+      }
+      .responsive-chart {
+        min-width: 800px !important;
+        height: 400px;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+/**** filters ****/
+
+.row {
+  &.filter {
+    &>div {
+      margin-bottom: 20px;
+    }
+  }
+}

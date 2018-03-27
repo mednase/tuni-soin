@@ -1,0 +1,20 @@
+#campaign_top_opened>thead>tr{
+    background: #76838f;
+    border: 1px solid #76838f;
+    border-bottom: none;
+}
+#campaign_top_opened>thead th:not(.gold){
+    color: white!important;
+}
+.data>td:first-child{
+    width: 30%;
+    position: relative;
+}
+.border-divider{
+    position: absolute;
+    bottom: -1px;
+    left: -5px;
+    width: 5px;
+    height: 1px;
+    background: #e4eaec;
+}

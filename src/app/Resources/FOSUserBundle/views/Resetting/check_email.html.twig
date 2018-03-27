@@ -1,0 +1,13 @@
+{% extends "@FOSUser/layout.html.twig" %}
+{% trans_default_domain 'FOSUserBundle' %}
+{% block bodyClass %}
+    page-reset
+{% endblock %}
+{% block fos_user_content %}
+    <div class="panel" style="width: inherit">
+        <div class="panel-body">
+            <p>{{ 'resetting.check_email'|trans({'%tokenLifetime%': tokenLifetime,'%email%':app.request.query.get('username')})|nl2br }}</p>
+            <div class="pull-right mt-50"><a  href="{{ path('fos_user_security_login') }}">{{ 'reset_password.request.back_to_login'|trans }} ?</a></div>
+        </div>
+    </div>
+{% endblock %}

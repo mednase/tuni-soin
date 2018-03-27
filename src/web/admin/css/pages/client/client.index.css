@@ -1,0 +1,19 @@
+.alertify .msg {
+  border-bottom: 1px solid #DCDCDC; }
+
+.alertify #full-delete-block {
+  text-align: left; }
+.disabled-client td{
+  opacity: 0.5!important;
+}
+.disabled-client td:last-child{
+  opacity: 1 !important;
+}
+.disabled-client a.btn-disable-client{
+  color:red!important;
+}
+/*# sourceMappingURL=client.index.css.map */
+.assign-modal .modal-container{
+  max-height: 450px;
+  overflow-y: auto;
+}

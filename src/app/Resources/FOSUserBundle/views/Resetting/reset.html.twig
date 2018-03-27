@@ -1,0 +1,15 @@
+{% extends "@FOSUser/layout.html.twig" %}
+{% trans_default_domain 'FOSUserBundle' %}
+{% block bodyClass %}
+    page-login-v3
+{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('admin/assets/theme/classic/base/assets/examples/css/pages/login-v3.min.css') }}">
+{% endblock %}
+{% block fos_user_content %}
+    <div class="panel">
+        <div class="panel-body">
+            {% include "FOSUserBundle:Resetting:reset_content.html.twig" %}
+        </div>
+    </div>
+{% endblock fos_user_content %}

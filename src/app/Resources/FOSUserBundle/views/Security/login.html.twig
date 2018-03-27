@@ -1,0 +1,52 @@
+{% extends "@FOSUser/layout.html.twig" %}
+{% trans_default_domain 'FOSUserBundle' %}
+{% block bodyClass %}
+    page-login-v3
+{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('theme/classic/base/assets/examples/css/pages/login-v3.min.css') }}">
+{% endblock %}
+{% block fos_user_content %}
+    <div class="panel">
+        <div class="panel-body">
+            <form class="form-horizontal" action="{{ path("fos_user_security_check") }}" method="post" novalidate>
+                {% set errorEmail="" %}{% set errorPassword="" %}
+                {% for type, flashMessages in app.session.flashbag.all() %}
+                        {% for flashMessage in flashMessages %}
+                            {% if type == 'error_email' %}
+                                {% set errorEmail =   flashMessage %}
+                            {% elseif type == 'error_password' %}
+                                {% set errorPassword =   flashMessage %}
+                            {% endif %}
+                        {% endfor %}
+                {% endfor %}
+                <div class="form-group form-material floating" data-plugin="formMaterial">
+                    <input type="email" class="form-control" id="username" name="_username" value="{{ last_username }}"/>
+                    <label class="floating-label" for="username">{{'security.login.username'|trans }}</label>
+                    <span class="error-message text-left left-0">
+                        {{ errorEmail }}
+                    </span>
+                </div>
+                <div class="form-group form-material floating mb-30gi" data-plugin="formMaterial">
+                    <input type="password" class="form-control" id="password" name="_password"/>
+                    <label class="floating-label" for="password">{{ 'security.login.password'|trans }}</label>
+                    <span class="error-message text-left left-0">
+                        {{ errorPassword }}
+                    </span>
+                </div>
+                <div class="form-group clearfix">
+                    <div class="checkbox-custom checkbox-inline checkbox-primary checkbox-lg float-left">
+                        <input type="checkbox" id="remember_me" name="_remember_me" value="on">
+                        <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+                    </div>
+                    <a class="float-right" href="{{ path('fos_user_resetting_request') }}">{{ 'layout.forgot_password'|trans }}</a>
+                </div>
+                <button type="submit" class="btn basic-btn btn-block btn-lg mt-40">{{ 'layout.login'|trans }}</button>
+                {% if csrf_token %}
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                {% endif %}
+            </form>
+        </div>
+    </div>
+{% endblock fos_user_content %}
+

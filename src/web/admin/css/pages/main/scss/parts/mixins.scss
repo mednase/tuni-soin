@@ -1,0 +1,36 @@
+// vendor prefixing
+@mixin crossBrowser($property, $val){
+  -webkit-#{$property}: $val;
+  -moz-#{$property}: $val;
+  -ms-#{$property}: $val;
+  #{$property}: $val;
+}
+
+@mixin displayFlex(){
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+@mixin alignItems($val){
+	-webkit-align-items: $val; /* Safari 7.0+ */
+    align-items: $val;
+}
+
+@mixin justifyContent($val){
+  -webkit-justify-content: $val; /* Safari 7.0+ */
+  justify-content: $val;
+}
+
+@function rem($pixels, $context: $baseFontSize) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1rem;
+}

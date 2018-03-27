@@ -1,0 +1,104 @@
+/***  login background ****/
+
+.page-login-v3 {
+  &:before {
+    background-image: inherit;
+    background: #f8f8f8;
+  }
+  &.layout-full {
+    .page {
+      height: 80%;
+    }
+  }
+}
+
+.page-reset {
+  &.layout-full {
+    .page {
+      height: 80%;
+    }
+  }
+}
+
+/***  login form ****/
+.brand {
+  a {
+    img {
+      max-width: 400px;
+    }
+  }
+}
+.page-login-v3 {
+  .panel {
+    width: 460px;
+    .panel-body {
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      padding: 40px 35px;
+    }
+  }
+  padding: 0;
+  form {
+    margin: 0px 0 30px;
+    .btn {
+      padding: 10px 14px;
+    }
+  }
+}
+
+.page-login-v3, .page-forgot-password, .page-reset {
+  footer {
+    border-top: 1px solid #e0e0e0;
+    padding: 10px;
+    .lang-toolbar {
+      @include displayFlex();
+      @include justifyContent(center);
+      float: right;
+      font-size: 14px;
+      .navbar-toolbar {
+        padding: 0;
+        .dropdown-menu {
+          top: -100px;
+          right: 14px;
+          left: auto;
+        }
+        .nav-link {
+          padding-top: 0;
+          padding-bottom: 0;
+        }
+      }
+    }
+    /***** login footer ***/
+    .page-copyright {
+      margin-top: 0;
+      p {
+        color: #000;
+        text-align: left;
+        margin-bottom: 0;
+        padding-top: 4px;
+      }
+
+    }
+  }
+}
+
+
+
+/******** forgot-password ****/
+.page-forgot-password {
+  &.layout-full {
+    .page {
+      height: 80%;
+    }
+  }
+  .page-content {
+    width: 460px;
+  }
+  form {
+    width: auto;
+    margin: 80px auto 0;
+    .btn {
+      padding: 10px 14px;
+    }
+  }
+}

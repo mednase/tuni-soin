@@ -1,0 +1,1 @@
+{"version":3,"file":"client.index.css","sources":["client.index.scss"],"sourcesContent":[".alertify {\r\n  .msg {\r\n    border-bottom: 1px solid #DCDCDC;\r\n  }\r\n  #full-delete-block{\r\n    text-align: left;\r\n  }\r\n}"],"names":[],"mappings":"AAAA,AACE,SADO,CACP,IAAI,CAAC;EACH,aAAa,EAAE,iBAAiB,GACjC;;AAHH,AAIE,SAJO,CAIP,kBAAkB,CAAA;EAChB,UAAU,EAAE,IAAI,GACjB"}

@@ -1,0 +1,130 @@
+{% extends "@DashboardMailjet/layout.html.twig" %}
+{% block title %}{{ 'profile.title'|trans }}{% endblock %}
+{% block stylesheets %}
+    <style>
+        .profile_form {
+            background-color: white;
+            padding-top: 40px;
+            height: 100%;
+            padding-bottom: 50px;
+            text-align: center
+        }
+
+        hr.style18 {
+            height: 30px;
+            border: 0 solid #17c4bb;
+            border-top-width: 1px;
+            border-radius: 20px;
+        }
+
+        hr.style18:before {
+            display: block;
+            content: "";
+            height: 30px;
+            margin-top: -31px;
+            border: 0 solid #17c4bb;
+            border-bottom-width: 1px;
+            border-radius: 20px;
+        }
+
+        h1 {
+            color: #17bbb2;
+            font-family: 'Trocchi', serif;
+            font-size: 45px;
+            font-weight: normal;
+            line-height: 48px;
+            margin-bottom: 30px;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <div class="profile_form">
+        <h1>{{ 'profile.myProfile'|trans }}</h1>
+        <div>
+            <!-- BEGIN FORM-->
+            {{ form_start(edit_form, {'attr': {'class': 'form-horizontal row' }}) }}
+            {{ form_errors(edit_form ) }}
+            <div class="form-body col-md-8 col-md-offset-2">
+                <div class="form-group">
+                    <label class="col-md-4 control-label">{{ 'profile.form.firstName'|trans }}</label>
+                    <div class="col-md-6 {% if edit_form.firstName.vars.errors|length %} input-has-error {% endif %}">
+                        {{ form_widget(edit_form.firstName,{'attr': {'class': 'form-control input-circle','placeholder':'profile.placeholder.firstName'|trans}}) }}
+                        <div class="font-red">
+                            {{ form_errors(edit_form.firstName) }}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">{{ 'profile.form.lastName'|trans }}</label>
+                    <div class="col-md-6 {% if edit_form.lastName.vars.errors|length %} input-has-error {% endif %}">
+                        {{ form_widget(edit_form.lastName,{'attr': {'class': 'form-control input-circle','placeholder': 'profile.placeholder.lastName'|trans }}) }}
+                        <div class="font-red">
+                            {{ form_errors(edit_form.lastName) }}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">{{ 'profile.form.username'|trans }}</label>
+                    <div class="col-md-6 {% if edit_form.username.vars.errors|length %} input-has-error {% endif %}">
+                        {{ form_widget(edit_form.username,{'attr': {'class': 'form-control input-circle','placeholder': 'profile.placeholder.username'|trans }}) }}
+                        <div class="font-red">
+                            {{ form_errors(edit_form.username) }}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">{{ 'profile.form.email'|trans }}</label>
+                    <div class="col-md-6 {% if edit_form.email.vars.errors|length %} input-has-error {% endif %}">
+                        {{ form_widget(edit_form.email,{'attr': {'type':'text','class': 'form-control input-circle','placeholder': 'profile.placeholder.email'|trans }}) }}
+                        <div class="font-red">
+                            {{ form_errors(edit_form.email) }}
+                        </div>
+                    </div>
+                </div>
+                <hr class="style18">
+                <br>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">{{ 'profile.form.password'|trans }}</label>
+                    <div class="col-md-6 {% if edit_form.plainPassword.first.vars.errors|length %} input-has-error {% endif %}">
+                        {{ form_widget(edit_form.plainPassword.first,{'attr': {'type':'text','class': 'form-control input-circle','placeholder': 'profile.placeholder.password'|trans }}) }}
+                        <div class="font-red">
+                            {{ form_errors(edit_form.plainPassword.first) }}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">{{ 'profile.form.confirmPassword'|trans }}</label>
+                    <div class="col-md-6 {% if edit_form.plainPassword.second.vars.errors|length %} input-has-error {% endif %}">
+                        {{ form_widget(edit_form.plainPassword.second,{'attr': {'type':'text','class': 'form-control input-circle','placeholder': 'profile.placeholder.confirmPassword'|trans  }}) }}
+                        <div class="font-red">
+                            {{ form_errors(edit_form.plainPassword.second) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-actions">
+                <div class="col-md-12">
+                    <div class="text-center">
+                        <button type="button" class="btn btn-circle green btn-submit-form">{{ 'profile.form.submit'|trans }}</button>
+                    </div>
+                </div>
+            </div>
+            {{ form_widget(edit_form._token) }}
+            {{ form_end(edit_form,{render_rest:false}) }}
+        </div>
+    </div>
+
+{% endblock %}
+{% block javascripts %}
+    <script>
+        $(document).ready(function () {
+           $('.btn-submit-form').click(function () {
+               $.each($('input[type="password"]'),function (i,e) {
+                   if(!$(e).val())
+                       $(e).attr('disabled','true');
+               })
+               $(this).closest('form').submit();
+           })
+        });
+    </script>
+{% endblock %}

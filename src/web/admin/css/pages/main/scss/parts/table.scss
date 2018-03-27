@@ -1,0 +1,235 @@
+/*** table header *****/
+.header-table {
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+.table {
+  &>thead {
+    th {
+      font-weight: 500;
+      &>a {
+        &.sort-icon {
+          &>i {
+            font-weight: 900;
+            margin-left: 10px;
+          }
+          &.disable {
+            color: #d0d0d0;
+          }
+        }
+      }
+    }
+  }
+  tfoot {
+    tr {
+      td {
+        font-weight: 600;
+        border-top: 2px solid #d2d2d2;
+        strong {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  td {
+    vertical-align: middle;
+    height: 50px;
+  }
+}
+
+/*** pagination *****/
+div{
+  &.dataTables_paginate{
+    .paginate_button {
+      &.previous , &.next {
+        a{
+          padding: 10px 12px;
+        }
+      }
+      &.active {
+        &> a{
+          border-color: $baseColor ;
+          background-color: $baseColor ;
+          &:focus, &:hover {
+            border-color: $baseColor ;
+            background-color: $baseColor
+          }
+        }
+      }
+      &> a{
+        &:focus, &:hover {
+          color: $baseColor ;
+          outline: 0;
+        }
+      }
+    }
+  }
+}
+.dataTables_wrapper {
+  .dataTables_info {
+    position: relative;
+  }
+}
+
+
+.custom-pagination {
+  nav {
+    @include displayFlex();
+    @include justifyContent(flex-end);
+    ul {
+      li {
+        &.previous , &.next {
+          a {
+            font-size: 18px;
+          }
+        }
+        &.active {
+          .page-link {
+            border-color: $baseColor ;
+            background-color: $baseColor ;
+            &:focus, &:hover {
+              border-color: $baseColor + 10;
+              background-color: $baseColor + 10;
+              color: #fff;
+            }
+          }
+        }
+        .page-link {
+          &.more-page {
+            padding: 6px 12px 12px 12px;
+            font-weight: 900;
+          }
+          &:focus, &:hover {
+            color: $baseColor;
+            outline: 0;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+#saveTablePageLength {
+  width: 75px;
+  height: 36px;
+
+}
+
+/*** action buttons ***/
+.table {
+  .actions {
+    position: relative;
+    width:185px !important;
+    box-sizing: border-box;
+    .hover {
+      height: 100%;
+      line-height: 33px;
+      .items {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 100%;
+        padding: 0;
+        border-left: 1px solid #f3f3f3;
+        border-right: 1px solid #f3f3f3;
+        opacity: 0;
+        @include crossBrowser (transition, width .3s linear);
+        background-color: #fff;
+        overflow: hidden;
+        box-sizing: border-box;
+         a {
+          display: inline-block;
+          padding: 17px 15px;
+          border-right: 1px solid #f3f3f3;
+           outline: none;
+          z-index: 999;
+          span {
+            line-height: 47px;
+          }
+          &.not-active {
+            pointer-events: none;
+            cursor: default;
+            color: #c0c2c3;
+          }
+        }
+        > a {
+          &:last-child {
+            border: none;
+          }
+        }
+      }
+      &:hover {
+        .items {
+          width: 203px;
+          opacity: 1;
+        }
+      }
+    }
+    &.minified {
+      width:135px !important;
+      &:hover {
+        .items {
+          width: 150px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+
+}
+/**** status icons *****/
+.table {
+  .user-status {
+    padding-left: 25px;
+    i {
+      &.fa-check-circle {
+        color: #49ab41;
+      }
+      &.fa-times {
+        color: #E1E3E4;
+      }
+    }
+  }
+}
+
+/****table ****/
+.table {
+  tr {
+    td {
+      a {
+        &.link-campaign {
+          color: #76838f;
+        }
+      }
+      .progress {
+        margin-bottom: 0;
+        .progress-bar {
+          background-color: #83B483
+        }
+      }
+    }
+  }
+}
+/*** responsive table ***/
+.responsive-datatable {
+  overflow-x: auto;
+  .dataTables_wrapper {
+    min-width: 1100px;
+  }
+}
+
+.responsive-table {
+  overflow-x: auto;
+  table {
+    width: 100%;
+    min-width: 1000px;
+
+  }
+}
+
+

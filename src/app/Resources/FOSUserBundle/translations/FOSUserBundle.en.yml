@@ -1,0 +1,61 @@
+layout:
+    login: 'Log in'
+    forgot_password: 'Forgot your password?'
+    profile: Profile
+    account: Account
+    copyright: '. All RIGHT RESERVED.'
+
+security:
+    login:
+        username: Email
+        password: Password
+        remember_me: 'Remember me'
+        submit: 'Log in'
+        error:
+            invalid_credentials: 'Your email or password is incorrect. Try Again'
+
+reset_password:
+    request:
+        title: 'Forgot Your Password ?'
+        text: 'Input your registered email to reset your password'
+        form:
+            email_placeholder: 'Enter your email'
+            submit: 'Reset password'
+        sent: 'The password has been reset successfully.'
+        invalid_email:
+            empty: 'The email address is empty.'
+            format: 'The email address is invalid.'
+        email_not_found: 'The email address "%email%" does not exist.'
+        disabled_account: 'This account is disabled !'
+        back_to_login: 'Back to Authentication page'
+resetting:
+    go_login: Login page
+    request:
+        username: 'Username or email address'
+        submit: 'Reset password'
+    reset:
+        submit: 'Reset'
+    flash:
+        success: 'The password has been reset successfully.'
+    reset_email:
+        subject: "Mailboard - resetting my password"
+        hello: "Hello"
+        message: "You have requested to reset your password on <strong>%date%</strong> at <strong>%time%</strong>. <br> In order to finalize the modification of your password, we invite you to click on this link:"
+        url_text: "Reset my password"
+        note: "Warning this link is active %time% hours, after this time, it will be necessary to make a new request of reset of password."
+        greeting: "<strong>cordially,<br>The Mailboard Team</strong>"
+
+    email:
+        subject: 'Reset your password'
+        btn_label: 'Reset my password'
+        b_one: 'You have requested a password reset from <strong>% date% </ strong> to <strong>% hour% </ strong>. <br> In order to finalize the modification of your password, we invite you to click on this link:'
+        b_two: 'Attention this link is active 24 hours, after this time, you will have to make a new request to reset password.'
+
+registration:
+    email:
+        subject: "Creating a mailBoard account"
+        hello: "Hello"
+        message: "To activate your user account, please go to this link:"
+        url_text: "Activate my account"
+        note: "This link can only be used once to validate your account."
+        greeting: "<strong>cordially,<br>The Mailboard Team</strong>"

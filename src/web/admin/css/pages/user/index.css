@@ -1,0 +1,13 @@
+.disabled-user td{
+    opacity: 0.5!important;
+}
+.disabled-user td:last-child{
+    opacity: 1 !important;
+}
+.disabled-user a.btn-disable-user{
+    color:red!important;
+}
+.assign-modal .modal-container{
+    max-height: 450px;
+    overflow-y: auto;
+}

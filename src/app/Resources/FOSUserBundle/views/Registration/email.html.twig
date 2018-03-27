@@ -1,0 +1,177 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{% block subject %}
+    {% autoescape false %}
+        {{ 'registration.email.subject'|trans({}) }}
+    {% endautoescape %}
+{% endblock %}
+{% block body_html %}
+    <div style="background-color: #fff"><!-- node type 8 -->
+        <div style="margin: 0px auto; max-width: 720px; background: #eee">
+            <table cellpadding="0" cellspacing="0" style="font-size: 0px; width: 100%; background: #eee" align="center"
+                   border="0">
+                <tbody>
+                <tr>
+                    <td style="text-align: center; vertical-align: top; direction: ltr; font-size: 0px; padding: 0px">
+                        <!-- node type 8 -->
+                        <div style="margin: 0px auto; max-width: 720px">
+                            <table cellpadding="0" cellspacing="0" style="font-size: 0px; width: 100%" align="center"
+                                   border="0">
+                                <tbody>
+                                <tr>
+                                    <td style="text-align: center; vertical-align: top; direction: ltr; font-size: 0px; padding: 20px 0px; padding-bottom: 0px; padding-top: 0px">
+                                        <!-- node type 8 -->
+                                        <div class="mj-column-per-100 outlook-group-fix"
+                                             style="vertical-align: top; display: inline-block; direction: ltr; font-size: 13px; text-align: left; width: 100%">
+                                            <table cellpadding="0" cellspacing="0" width="100%" border="0">
+                                                <tbody>
+                                                <tr>
+                                                    <td style="word-wrap: break-word; font-size: 0px; padding: 10px 25px"
+                                                        align="center">
+                                                        <table cellpadding="0" cellspacing="0"
+                                                               style="border-collapse: collapse; border-spacing: 0px"
+                                                               align="center" border="0">
+                                                            <tbody>
+                                                            <tr>
+                                                                <td style="width: 80px">
+                                                                    <img alt="" title="" height="auto"
+                                                                         src="{{ absolute_url(asset('admin/assets/img/mailboard-logo.png')) }}"
+                                                                         style="border: none; border-radius: 0px; display: block; outline: none; text-decoration: none; width: 100%; height: auto"
+                                                                         width="150"></td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- node type 8 --></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- node type 8 -->
+
+                        <div style="margin: 0px auto; max-width: 720px; background: #eee">
+                            <table cellpadding="0" cellspacing="0" style="font-size: 0px; width: 100%; background: #eee"
+                                   align="center" border="0">
+                                <tbody>
+                                <tr>
+                                    <td style="text-align: center; vertical-align: top; direction: ltr; font-size: 0px; padding: 5px 25px 0px 25px">
+                                        <!-- node type 8 -->
+                                        <div class="mj-column-per-100 outlook-group-fix"
+                                             style="vertical-align: top; display: inline-block; direction: ltr; font-size: 13px; text-align: left; width: 100%">
+                                            <table cellpadding="0" cellspacing="0" width="100%" border="0">
+                                                <tbody>
+                                                <tr>
+                                                    <td style="word-wrap: break-word; background: #fff; font-size: 0px; padding: 25px; padding-bottom: 0px"
+                                                        align="left">
+                                                        <div class=""
+                                                             style="cursor: auto; color: #000; font-family: Open Sans; font-size: 16px; font-weight: 600; line-height: 22px; text-align: left">
+                                                            {{ 'registration.email.hello'|trans({}) }} {{ user.firstName }} {{ user.lastName }}
+                                                            ,
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="word-wrap: break-word; background: #fff; font-size: 0px; padding: 25px"
+                                                        align="left">
+                                                        <div class=""
+                                                             style="cursor: auto; color: #616161; font-family: Open Sans; font-size: 13px; line-height: 22px; text-align: left">
+                                                            {{ 'registration.email.message'|trans({}) }}
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- node type 8 -->
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- node type 8 -->
+                        <div style="margin: 0px auto; max-width: 670px">
+                            <table cellpadding="0" cellspacing="0" style="font-size: 0px; width: 100%" align="center"
+                                   border="0">
+                                <tbody>
+                                <tr>
+                                    <td style="text-align: center; vertical-align: top; direction: ltr; font-size: 0px; padding: 20px 0px; padding-bottom: 0px; padding-top: 0px">
+                                        <!-- node type 8 -->
+                                        <div class="mj-column-px-670 outlook-group-fix"
+                                             style="vertical-align: top; display: inline-block; direction: ltr; font-size: 13px; text-align: left; width: 100%">
+                                            <table cellpadding="0" cellspacing="0" style="background: #fff" width="100%"
+                                                   border="0">
+                                                <tbody>
+                                                <tr>
+                                                    <td style="word-wrap: break-word; font-size: 0px; padding: 10px 25px"
+                                                        align="center">
+                                                        <table cellpadding="0" cellspacing="0"
+                                                               style="border-collapse: separate" align="center"
+                                                               border="0">
+                                                            <tbody>
+                                                            <tr>
+                                                                <td style="border: none; border-radius: 3px; background-color:#42d38d; color: #000; cursor: auto; padding: 12px 25px"
+                                                                    align="center" valign="middle" bgcolor="#fee04c"><a
+                                                                            href="{{ confirmationUrl }}"
+                                                                            style="text-decoration: none; line-height: 100%;color: #fff; font-family: Ubuntu, Helvetica, Arial, sans-serif; font-size: 13px; font-weight: normal; text-transform: none; margin: 0px"
+                                                                            target="_blank"
+                                                                            rel="noreferrer">{{ 'registration.email.url_text'|trans({}) }}</a>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- node type 8 -->
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- node type 8 -->
+                        <div style="margin: 0px auto; max-width: 720px">
+                            <table cellpadding="0" cellspacing="0" style="font-size: 0px; width: 100%" align="center"
+                                   border="0">
+                                <tbody>
+                                <tr>
+                                    <td style="text-align: center; vertical-align: top; direction: ltr; font-size: 0px; padding: 0px 25px 25px 25px">
+                                        <!-- node type 8 -->
+                                        <div class="mj-column-per-100 outlook-group-fix"
+                                             style="vertical-align: top; display: inline-block; direction: ltr; font-size: 13px; text-align: left; width: 100%">
+                                            <table cellpadding="0" cellspacing="0" width="100%" border="0">
+                                                <tbody>
+                                                <tr>
+                                                    <td style="word-wrap: break-word; background: #fff; font-size: 0px; padding: 25px"
+                                                        align="left">
+                                                        <div class=""
+                                                             style="cursor: auto; color: #616161; font-family: Open Sans; font-size: 13px; line-height: 22px; text-align: left">
+                                                            {{ 'registration.email.note'|trans({}) }}
+                                                            <br>
+                                                            <br>
+                                                            {{ 'registration.email.greeting'|trans({})|raw }}
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- node type 8 -->
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- node type 8 -->
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- node type 8 -->
+    </div>
+{% endblock %}

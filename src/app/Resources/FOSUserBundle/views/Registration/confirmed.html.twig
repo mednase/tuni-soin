@@ -1,0 +1,9 @@
+{% extends "@FOSUser/layout.html.twig" %}
+{% block bodyClass %}page-reset{% endblock %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+    <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
+    <div class="pull-right mt-50"><a  href="{{ path('fos_user_security_login') }}">{{ 'reset_password.request.back_to_login'|trans }} ?</a></div>
+{% endblock fos_user_content %}

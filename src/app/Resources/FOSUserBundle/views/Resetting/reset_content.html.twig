@@ -1,0 +1,29 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{{ form_start(form, { 'action': path('fos_user_resetting_reset', {'token': token}), 'attr': { 'class': 'fos_user_resetting_reset','novalidate':'true' } }) }}
+  {% set firstPassError="" %}{% set secPassError="" %}
+            {% for type, flashMessages in app.session.flashbag.all() %}
+                {% for flashMessage in flashMessages %}
+                    {% if type == 'firstPass_error' %}
+                        {% set firstPassError =   flashMessage %}
+                    {% elseif type == 'secPass_error' %}
+                        {% set secPassError =   flashMessage %}
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+    <div class="form-group form-material floating" data-plugin="formMaterial">
+    {{ form_widget(form.plainPassword.first,{attr:{class:'form-control empty'}}) }}
+    {{ form_label(form.plainPassword.first,null,{label_attr :{class:'floating-label'}}) }}
+    <span class="error-message text-left left-0">
+        {{ firstPassError }}
+    </span>
+    </div>
+    <div class="form-group form-material floating" data-plugin="formMaterial">
+    {{ form_widget(form.plainPassword.second,{attr:{class:'form-control empty'}}) }}
+    {{ form_label(form.plainPassword.second,null,{label_attr :{class:'floating-label'}}) }}
+    <span class="error-message text-left left-0">
+        {{ secPassError }}
+    </span>
+    </div>
+    <button type="submit" class="btn basic-btn btn-block btn-lg mt-40">{{ 'resetting.reset.submit'|trans }}</button>
+{{ form_end(form) }}
